@@ -4,3 +4,6 @@ packages:
       version: 1.0.0
     package2:
       name: blah2
+  uninstall:
+    - package3
+    - package4

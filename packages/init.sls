@@ -1,6 +1,6 @@
 {% from "packages/map.jinja" import packages_map with context %}
 
-{% for name, options in packages_map.items() %}
+{% for name, options in packages_map.install.items() %}
 {{ name }}:
   pkg.installed:
 {% if options.name %}
