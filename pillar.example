@@ -1,0 +1,6 @@
+packages:
+  install:
+    package1:
+      version: 1.0.0
+    package2:
+      name: blah2
