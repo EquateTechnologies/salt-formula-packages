@@ -1,7 +1,7 @@
 {% from "packages/map.jinja" import packages_map with context %}
 
 {# install packages #}
-{% for name, options in packages_map.install.items() %}
+{% for name, options in packages_map.get('install', {}).items() %}
 packages-install-{{ name }}:
   pkg.installed:
 {% if options.name %}
@@ -15,7 +15,7 @@ packages-install-{{ name }}:
 {% endfor %}
 
 {# uninstall packages #}
-{% for name in packages_map.uninstall %}
+{% for name in packages_map.get('uninstall', []) %}
 packages-uninstall-{{ name }}:
   pkg.removed:
     - name: {{ name }}
