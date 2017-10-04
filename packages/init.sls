@@ -4,6 +4,7 @@
 {% for name, options in packages_map.get('install', {}).items() %}
 packages-install-{{ name }}:
   pkg.installed:
+{% if options != None %}
 {% if options.name %}
     - name: {{ options.name }}
 {% else %}
@@ -11,6 +12,9 @@ packages-install-{{ name }}:
 {% endif %}
 {% if options.version %}
     - version: {{ options.version }}
+{% endif %}
+{% else %}
+    - name: {{ name }}
 {% endif %}
 {% endfor %}
 
