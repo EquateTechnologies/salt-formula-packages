@@ -21,8 +21,8 @@ pip-install-{{ name }}:
 {% endfor %}
 
 {# uninstall pips #}
-{% for name in packages_map.get('uninstall', []) %}
-pips-removed-{{ name }}:
+{% for name in packages_map.get('pips:uninstall', []) %}
+pip-remove-{{ name }}:
   pip_state.removed:
     - name: {{ name }}
 {% endfor %}
