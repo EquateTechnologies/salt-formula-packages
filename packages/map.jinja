@@ -1,7 +1,19 @@
 {% set packages_map = salt['grains.filter_by']({
   'default': {
     'install': {},
-    'uninstall': {},
+    'uninstall': [],
+    'gem': {
+      'install': {},
+      'uninstall': [],
+    },
+    'pip': {
+      'install': {},
+      'uninstall': [],
+    },
+    'npm': {
+      'install': {},
+      'uninstall': [],
+    },
   },
 },
 merge=salt['pillar.get']('packages', {}),
