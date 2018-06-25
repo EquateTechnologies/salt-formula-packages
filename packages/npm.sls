@@ -17,6 +17,9 @@ npm-install-{{ name }}:
 {% else %}
     - name: {{ name }}
 {% endif %}
+{% for option_name, option_value in options.get('options', {}).items() %}
+    - {{ option_name }}: {{ option_value }}
+{% endfor %}
 {% endif %}
 {% endif %}
 
