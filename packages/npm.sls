@@ -21,6 +21,8 @@ npm-install-{{ name }}:
     - {{ option_name }}: {{ option_value }}
 {% endfor %}
 {% endif %}
+{% else %}
+    - name: {{ options.name }}
 {% endif %}
 {% endfor %}
 
