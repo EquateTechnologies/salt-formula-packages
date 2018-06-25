@@ -3,8 +3,8 @@
 {# install packages #}
 {% for name, options in packages_map.get('install', {}).items() %}
 packages-install-{{ name }}:
-{% if options != None %}
   pkg.installed:
+{% if options != None %}
 {% if options.name %}
     - name: {{ options.name }}
 {% else %}
@@ -16,11 +16,10 @@ packages-install-{{ name }}:
 {% for option_name, option_value in options.get('options', {}).items() %}
     - {{ option_name }}: {{ option_value }}
 {% endfor %}
+{% else %}
+    - name: {{ name }}
 {% endif %}
 {% endfor %}
-{% else %}
-  pkg.installed: []
-{% endif %}
 
 {# uninstall packages #}
 {% for name in packages_map.get('uninstall', []) %}
