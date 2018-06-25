@@ -12,13 +12,13 @@ gem-install-{{ name }}:
 {% endif %}
 {% if options.version %}
     - version: {{ options.version }}
-{% endif %}
 {% else %}
     - name: {{ name }}
 {% endif %}
 {% for option_name, option_value in options.get('options', {}).items() %}
     - {{ option_name }}: {{ option_value }}
 {% endfor %}
+{% endif %}
 {% endfor %}
 
 {# uninstall gems #}
