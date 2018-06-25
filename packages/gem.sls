@@ -1,7 +1,7 @@
 {% from "packages/map.jinja" import packages_map with context %}
 
 {# install ruby gems #}
-{% for name, options in packages_map.get('gems:install', {}).items() %}
+{% for name, options in packages_map.get('gem:install', {}).items() %}
 gem-install-{{ name }}:
   gem.installed:
 {% if options != None %}
@@ -19,7 +19,7 @@ gem-install-{{ name }}:
 {% endfor %}
 
 {# uninstall gems #}
-{% for name in packages_map.get('gems:uninstall', []) %}
+{% for name in packages_map.get('gem:uninstall', []) %}
 gem-remove-{{ name }}:
   gem.removed:
     - name: {{ name }}
