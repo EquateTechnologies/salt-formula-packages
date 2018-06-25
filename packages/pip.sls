@@ -22,7 +22,7 @@ pip-install-{{ name }}:
 {% endfor %}
 {% endif %}
 {% else %}
-    - name: {{ options.name }}
+    - name: {{ name }}
 {% endif %}
 {% endfor %}
 
