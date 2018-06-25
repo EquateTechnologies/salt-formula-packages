@@ -1,4 +1,7 @@
 packages:
+  gem_install: True
+  pip_install: True
+  npm_install: True
   install:
     package1:
       version: 1.0.0
