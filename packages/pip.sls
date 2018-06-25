@@ -17,6 +17,7 @@ pip-install-{{ name }}:
 {% else %}
     - name: {{ name }}
 {% endif %}
+{% endif %}
 {% for option_name, option_value in options.get('options', {}).items() %}
     - {{ option_name }}: {{ option_value }}
 {% endfor %}
