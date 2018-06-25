@@ -1,7 +1,7 @@
 {% from "packages/map.jinja" import packages_map with context %}
 
 {# install python pips #}
-{% for name, options in packages_map.get('install', {}).items() %}
+{% for name, options in packages_map.get('pips:install', {}).items() %}
 pip-install-{{ name }}:
   pip_state.installed:
 {% if options != None %}
