@@ -18,6 +18,8 @@ gem-install-{{ name }}:
 {% for option_name, option_value in options.get('options', {}).items() %}
     - {{ option_name }}: {{ option_value }}
 {% endfor %}
+{% else %}
+    - name: {{ name }}
 {% endif %}
 {% endfor %}
 
