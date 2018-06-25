@@ -22,6 +22,7 @@ npm-install-{{ name }}:
 {% endfor %}
 {% endif %}
 {% endif %}
+{% endfor %}
 
 {# uninstall gems #}
 {% for name in packages_map.get('npm:uninstall', []) %}
