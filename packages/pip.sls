@@ -18,6 +18,8 @@ pip-install-{{ name }}:
     - name: {{ name }}
 {% endif %}
 {% endif %}
+{% endif %}
+
 {% endfor %}
 
 {# uninstall pips #}
