@@ -19,8 +19,8 @@ gem-install-{{ name }}:
 {% endfor %}
 
 {# uninstall gems #}
-{% for name in packages_map.get('uninstall', []) %}
-gem-removed-{{ name }}:
+{% for name in packages_map.get('gems:uninstall', []) %}
+gem-remove-{{ name }}:
   gem.removed:
     - name: {{ name }}
 {% endfor %}
