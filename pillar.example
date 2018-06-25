@@ -7,3 +7,30 @@ packages:
   uninstall:
     - package3
     - package4
+  pip:
+    install:
+      pip1:
+        version: 1.2.3
+      pip2:
+        name: whacky-complex-name
+    uninstall:
+      - pip3
+      - pip4
+  gem:
+    install:
+      gem1:
+        version: 1.2.3
+      gem2:
+        name: whacky-complex-name
+    uninstall:
+      - gem3
+      - gem4
+  npm:
+    install:
+      node-package1:
+        version: 1.2.3
+      node-package2:
+        name: whacky-complex-name
+    uninstall:
+      - node-package3
+      - node-package4
