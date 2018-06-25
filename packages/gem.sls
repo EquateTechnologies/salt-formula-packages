@@ -1,7 +1,7 @@
 {% from "packages/map.jinja" import packages_map with context %}
 
 {# install ruby gems #}
-{% for name, options in packages_map.get('install', {}).items() %}
+{% for name, options in packages_map.get('gems:install', {}).items() %}
 gem-install-{{ name }}:
   gem.installed:
 {% if options != None %}
